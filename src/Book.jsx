@@ -4,9 +4,14 @@ import './App.css'
 const Book = props => {
 	const [showDetails, setShowDetails] = useState(false)
 
-	const toggleModal = () => {
+const toggleModal = () => {
 		setShowDetails(!showDetails)
-		showDetails === true ? (document.body.style.overflow = 'auto') : (document.body.style.overflow = 'hidden')
+		showDetails === true
+			? (document.body.style.overflow = 'auto')
+			: (document.body.style.overflow = 'hidden') &&
+			  window.scrollTo({
+					top: 0,
+			  })
 	}
 
 	return (
